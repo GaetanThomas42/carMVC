@@ -4,6 +4,10 @@ namespace App\Manager;
 use PDO;
 use PDOException;
 
+/**
+ * DatabaseManager
+ * Gestion de la connexion à la base de données
+ */
 class DatabaseManager
 {
     // Instance unique de la connexion DB, valeur défaut null

@@ -4,6 +4,10 @@ namespace App\Controller;
 
 use App\Manager\CarManager;
 
+/**
+ * IndexController
+ * Contient les routes pour gérer les voitures en tant qu'admin
+ */
 class IndexController{
     
     private CarManager $carManager;

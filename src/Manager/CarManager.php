@@ -2,12 +2,10 @@
 namespace App\Manager;
 
 use App\Model\Car;
+
 /**
  * CarManager
- * Représente un gestionnaire de la table Car
- * Contient les méthodes et requêtes pour la table Car
- * Hérite de DatabaseManager, donc accès à la connexion PDO
- * via la méthode héritée statique getConnexion()
+ * Gestion de la table Car
  */
 class CarManager extends DatabaseManager
 {

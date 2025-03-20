@@ -1,4 +1,7 @@
 <?php
+// Template de la route add
+// URL : index.php?action=add
+
 $title = "Ajouter une voiture";
 require_once("block/header.php");
 ?>

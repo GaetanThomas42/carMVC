@@ -1,4 +1,7 @@
 <?php
+// Template de la route index
+// URL : index.php?action=index
+
 $title = "Bienvenue dans le Garage";
 require_once("block/header.php");
 ?>

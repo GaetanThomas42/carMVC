@@ -3,6 +3,10 @@ namespace App\Manager;
 
 use App\Model\User;
 
+/**
+ * UserManager
+ * Gestion de la table User
+ */
 class UserManager extends DatabaseManager{
 
     public function selectByUsername(string $username): User|false

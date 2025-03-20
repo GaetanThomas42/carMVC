@@ -1,4 +1,7 @@
 <?php
+// Template de la route login
+// URL : index.php?action=login
+
 $title = "Connexion";
 require_once("block/header.php");
 ?>

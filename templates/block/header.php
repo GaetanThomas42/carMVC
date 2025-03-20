@@ -23,27 +23,33 @@
 
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
+
                     <li class="nav-item">
                         <a class="nav-link text-light" href="index.php">Accueil</a>
                     </li>
 
                     <?php
-
                     // Vérification de la connexion utilisateur
                     if (!isset($_SESSION["username"])) { ?>
+
                         <li class="nav-item">
                             <a class="nav-link text-light" href="index.php?action=login">Connexion</a>
                         </li>
+
                         <li class="nav-item">
                             <a class="nav-link text-light" href="index.php?action=register">Inscription</a>
                         </li>
+
                     <?php } else { ?>
+
                         <li class="nav-item">
                             <a class="nav-link text-light" href="index.php?action=admin">Admin</a>
                         </li>
+
                         <li class="nav-item">
                             <a class="nav-link text-light" href="index.php?action=logout">Déconnexion</a>
                         </li>
+                        
                     <?php } ?>
                 </ul>
             </div>

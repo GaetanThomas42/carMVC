@@ -5,6 +5,11 @@ namespace App\Controller;
 use App\Manager\CarManager;
 use App\Model\Car;
 
+//
+/**
+ * AdminController
+ * Contient les routes pour gérer les voitures en tant qu'admin
+ */
 class AdminController
 {
 
@@ -83,7 +88,6 @@ class AdminController
             }
         }
         require_once("./templates/car_update.php");
-
     }
     // Route Delete ( ancien delete.php ) 
     // URL : index.php?action=delete&id=1
@@ -102,32 +106,31 @@ class AdminController
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             //Supprimer la voiture et rediriger
             $this->carManager->deleteByID($car->getId());
-            
+
             header("Location: index.php?action=admin");
             exit();
         }
 
         require_once("./templates/car_delete.php");
-
     }
 
-    
+
     public function validateCarForm(array $errors, array $carForm): array
-{
-    if (empty($carForm["model"])) {
-        $errors["model"] = "le modele de voiture est manquant";
+    {
+        if (empty($carForm["model"])) {
+            $errors["model"] = "le modele de voiture est manquant";
+        }
+        if (empty($carForm["brand"])) {
+            $errors["brand"] = "la marque de la voiture est manquante";
+        }
+        if (empty($carForm["horsePower"])) {
+            $errors["horsePower"] = "la puissance du vehicule est manquante";
+        }
+        if (empty($carForm["image"])) {
+            $errors["image"] = "l'image de la voiture est manquante";
+        }
+        //Démo class CarFormValidator
+
+        return $errors;
     }
-    if (empty($carForm["brand"])) {
-        $errors["brand"] = "la marque de la voiture est manquante";
-    }
-    if (empty($carForm["horsePower"])) {
-        $errors["horsePower"] = "la puissance du vehicule est manquante";
-    }
-    if (empty($carForm["image"])) {
-        $errors["image"] = "l'image de la voiture est manquante";
-    }
-    //Démo class CarFormValidator
-    
-    return $errors;
-}
 }

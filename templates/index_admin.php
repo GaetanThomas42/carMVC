@@ -1,4 +1,7 @@
 <?php
+// Template de la route admin
+// URL : index.php?action=admin
+
 $title = "Administration Garage";
 require_once("block/header.php");
 ?>

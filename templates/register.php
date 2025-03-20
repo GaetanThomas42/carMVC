@@ -1,4 +1,8 @@
 <?php
+// Template de la route register
+// URL : index.php?action=register
+
+$title = "Inscription";
 require_once("block/header.php");
 ?>
 

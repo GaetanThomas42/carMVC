@@ -1,8 +1,9 @@
 <?php
+// Template de la route delete
+// URL : index.php?action=delete&id=1
 
 $title = "Supprimer " . $car->getModel();
 require_once("block/header.php");
-
 ?>
 
 <h1>Confirmer la suppression de <?= $car->getBrand() ?> <?= $car->getModel() ?> ?</h1>

@@ -1,4 +1,7 @@
 <?php
+// Template de la route detail
+// URL : index.php?action=detail&id=1
+
 $title = $car->getModel() . " détails";
 require_once("block/header.php");
 ?>

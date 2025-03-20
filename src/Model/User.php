@@ -2,6 +2,9 @@
 
 namespace App\Model;
 
+/** 
+ * Réprésentation de la table User en objet PHP 
+ */
 class User{
 
     private ?int $id;
@@ -15,41 +18,27 @@ class User{
         $this->password = $password;
     }
     
-    /**
-     * Get the value of id
-     */ 
     public function getId()
     {
         return $this->id;
     }
 
-    /**
-     * Get the value of username
-     */ 
+
     public function getUsername()
     {
         return $this->username;
     }
 
-    /**
-     * Set the value of username
-     */ 
     public function setUsername($username)
     {
         $this->username = $username;
     }
 
-    /**
-     * Get the value of password
-     */ 
     public function getPassword()
     {
         return $this->password;
     }
 
-    /**
-     * Set the value of password
-     */ 
     public function setPassword($password)
     {
         $this->password = $password;

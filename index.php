@@ -7,7 +7,7 @@ use App\Controller\SecurityController;
 
 // Démarrer la session et vérification de la connexion user 
 session_start();
-
+// Vérification si l'utilisateur est connecté
 if(isset($_SESSION["username"])){
     $isLoggedIn = true;
 }else{

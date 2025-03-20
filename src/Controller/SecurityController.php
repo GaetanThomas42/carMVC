@@ -5,6 +5,10 @@ namespace App\Controller;
 use App\Manager\UserManager;
 use App\Model\User;
 
+/**
+ * SecurityController
+ * Contient les routes pour gérer la connexion et l'inscription
+ */
 class SecurityController
 {
 
