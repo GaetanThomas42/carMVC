@@ -40,8 +40,8 @@ class SecurityController
                     if (password_verify($_POST["password"], $user->getPassword())) {
                         // Je connecte l'utilisateur
                         $_SESSION["username"] = $user->getUsername();
-                        $adminController = new AdminController();
-                        $adminController->dashboardAdmin();
+
+                        header("Location: index.php?action=admin");
                         exit();
                     }
                 }
@@ -81,21 +81,28 @@ class SecurityController
                     $pass = password_hash($_POST["password"], PASSWORD_DEFAULT);
 
                     $user = new User(null, $_POST["username"], $pass);
-                    $this->userManager->insert($user);
 
-                    $_SESSION["username"] = $user->getUsername();
+                    if($this->userManager->insert($user)){
 
-                    $indexController = new IndexController();
-                    $indexController->homePage();                }
+                        $_SESSION["username"] = $user->getUsername();
+
+                        header("Location: index.php");
+                        exit(); 
+                    }
+                    $errors["password"] = "Problème lors de l'insertion en BDD";
+             
+                }
             }
         }
         require_once("./templates/register.php");
     }
 
     public function logout(){
+
         unset($_SESSION["username"]);    
-        $indexController = new IndexController();
-        $indexController->homePage();
+        header("Location: index.php");
+        exit(); 
+
     }
 
 }

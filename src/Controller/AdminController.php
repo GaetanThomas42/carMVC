@@ -56,7 +56,9 @@ class AdminController
 
         //Vérifier si la voiture avec l'ID existe en BDD
         if (!$car) {
-            $this->dashboardAdmin();
+
+            header("Location: index.php?action=admin");
+            exit();
         }
 
         $errors = [];
@@ -76,7 +78,7 @@ class AdminController
 
                 $this->carManager->update($car);
 
-                $this->dashboardAdmin();
+                header("Location: index.php?action=admin");
                 exit();
             }
         }
@@ -91,7 +93,8 @@ class AdminController
 
         //Vérifier si la voiture avec l'ID existe en BDD
         if (!$car) {
-            $this->dashboardAdmin();
+
+            header("Location: index.php?action=admin");
             exit();
         }
 
@@ -99,7 +102,8 @@ class AdminController
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             //Supprimer la voiture et rediriger
             $this->carManager->deleteByID($car->getId());
-            $this->dashboardAdmin();
+            
+            header("Location: index.php?action=admin");
             exit();
         }
 

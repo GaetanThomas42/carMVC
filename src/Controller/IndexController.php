@@ -31,7 +31,8 @@ class IndexController{
              //Afficher les voitures dans la template
              require_once("./templates/car_detail.php");
          }else{
-            $this->homePage();
+            header("Location: index.php");
+            exit();
          }
  }
 }
