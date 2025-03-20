@@ -2,6 +2,6 @@
 
 composer install
 
-#Reload autoloader
+# Reload autoloader
 
 composer dump-autoload
