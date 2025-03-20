@@ -9,10 +9,13 @@ class IndexController{
     private CarManager $carManager;
 
     public function __construct(){
+        // Quand on crée un IndexController
+        // Il contiendra automatiquement un CarManager
+        // Utilisable avec $this->carManager
         $this->carManager = new CarManager();
     }
 
-    // Route HomePage -> index.php
+    // Route HomePage -> URL : index.php
     public function homePage(){
         //Récuperer les voitures
         $cars = $this->carManager->selectAll();
@@ -20,7 +23,7 @@ class IndexController{
         require_once("./templates/index_car.php");
     }
 
-    // Route DetailCar -> index.php?action=detail&id=10 
+    // Route DetailCar -> URL: index.php?action=detail&id=10 
     public function detailCar(int $id){
          //Récuperer les voitures
          $car = $this->carManager->selectByID($id);

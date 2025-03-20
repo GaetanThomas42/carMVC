@@ -15,8 +15,8 @@ class SecurityController
         $this->userManager = new UserManager();
     }
 
-    // Route DashboardAdmin ( ancien admin.php ) 
-    // Route URL -> index.php?action=admin
+    // Route Login ( ancien login.php ) 
+    // Route URL -> index.php?action=login
     public function login()
     {
 
@@ -53,6 +53,8 @@ class SecurityController
         require_once("./templates/login.php");
     }
 
+    // Route Register ( ancien register.php ) 
+    // URL : index.php?action=register
     public function register()
     {
 

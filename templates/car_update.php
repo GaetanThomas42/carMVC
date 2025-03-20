@@ -8,7 +8,7 @@ require_once("block/header.php");
 <img src="images/<?= $car->getBrand() ?>" alt="<?= $car->getModel() ?>">
 
 
-<form method="POST" action="index.php?action=edit?id=<?= ($car->getId()) ?>">
+<form method="POST" action="index.php?action=edit&id=<?= ($car->getId()) ?>">
 
     <label for="model">Model</label>
     <input id="model" type="text" name="model" value="<?= ($car->getModel())  ?>">

@@ -55,7 +55,7 @@ if ($action === 'detail' && !is_null($id)) {
     $securityController->logout();
 
 }
- elseif ($action === 'admin' && $isLoggedIn) {
+elseif ($action === 'admin' && $isLoggedIn) {
 
     $adminController->dashboardAdmin();
 

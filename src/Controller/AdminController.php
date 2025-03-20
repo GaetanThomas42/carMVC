@@ -16,7 +16,7 @@ class AdminController
     }
 
     // Route DashboardAdmin ( ancien admin.php ) 
-    // Route URL -> index.php?action=admin
+    // URL : index.php?action=admin
     public function dashboardAdmin()
     {
         //Récuperer les voitures
@@ -25,6 +25,8 @@ class AdminController
         require_once("./templates/index_admin.php");
     }
 
+    // Route DashboardAdmin ( ancien add.php ) 
+    // URL : index.php?action=add
     public function addCar()
     {
         $errors = [];
@@ -46,6 +48,8 @@ class AdminController
         require_once("./templates/car_insert.php");
     }
 
+    // Route EditCar ( ancien update.php ) 
+    // URL : index.php?action=edit&id=1
     public function editCar(int $id)
     {
         $car = $this->carManager->selectByID($id); // Un seul connect DB par page
@@ -71,16 +75,16 @@ class AdminController
                 $car->setHorsePower($_POST["horsePower"]);
 
                 $this->carManager->update($car);
-                dd($car);
+
                 $this->dashboardAdmin();
                 exit();
             }
         }
         require_once("./templates/car_update.php");
 
-
     }
-
+    // Route Delete ( ancien delete.php ) 
+    // URL : index.php?action=delete&id=1
     public function deleteCar(int $id)
     {
         $car = $this->carManager->selectByID($id);
@@ -90,7 +94,6 @@ class AdminController
             $this->dashboardAdmin();
             exit();
         }
-
 
         //Si le form est validé
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -104,7 +107,7 @@ class AdminController
 
     }
 
-
+    
     public function validateCarForm(array $errors, array $carForm): array
 {
     if (empty($carForm["model"])) {

@@ -1,5 +1,3 @@
-
-
 -- Créer un doissier PHP-PDO
 -- Créer le fichier db.sql contenant ce code sql
 
