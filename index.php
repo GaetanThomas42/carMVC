@@ -37,12 +37,13 @@ $securityController = new SecurityController();
 
 // Gérer les routes avec une suite de conditions if
 
-//index.php?action=detail&id=12
+
+//index.php?action=homePage
 if ($action === 'homePage') {
 
     $indexController->homePage();
 
-//index.php?action=login
+//index.php?action=detail&id=12
 } elseif ($action === 'detail' && !is_null($id)) {
 
     $indexController->detailCar($id);
