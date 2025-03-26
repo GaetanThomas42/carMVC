@@ -6,7 +6,7 @@ use App\Manager\CarManager;
 
 /**
  * IndexController
- * Contient les routes pour gérer les voitures en tant qu'admin
+ * Contient les routes acèssible pas le visiteurs, page accueil, détail
  */
 class IndexController{
     
